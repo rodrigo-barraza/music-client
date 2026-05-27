@@ -32,7 +32,7 @@ async function apiRequest<T>(
 
 // ── Library ──────────────────────────────────────────────────
 
-export async function browseTracks(params?: {
+export async function browseTracks(parameters?: {
   sort?: string;
   search?: string;
   artist?: string;
@@ -42,13 +42,13 @@ export async function browseTracks(params?: {
   offset?: number;
 }): Promise<PaginatedResponse<Track>> {
   const searchParams = new URLSearchParams();
-  if (params?.sort) searchParams.set("sort", params.sort);
-  if (params?.search) searchParams.set("search", params.search);
-  if (params?.artist) searchParams.set("artist", params.artist);
-  if (params?.album) searchParams.set("album", params.album);
-  if (params?.genre) searchParams.set("genre", params.genre);
-  if (params?.limit) searchParams.set("limit", params.limit.toString());
-  if (params?.offset) searchParams.set("offset", params.offset.toString());
+  if (parameters?.sort) searchParams.set("sort", parameters.sort);
+  if (parameters?.search) searchParams.set("search", parameters.search);
+  if (parameters?.artist) searchParams.set("artist", parameters.artist);
+  if (parameters?.album) searchParams.set("album", parameters.album);
+  if (parameters?.genre) searchParams.set("genre", parameters.genre);
+  if (parameters?.limit) searchParams.set("limit", parameters.limit.toString());
+  if (parameters?.offset) searchParams.set("offset", parameters.offset.toString());
 
   const query = searchParams.toString();
   return apiRequest(`/library/tracks${query ? `?${query}` : ""}`);
@@ -58,17 +58,17 @@ export async function getTrack(trackId: string): Promise<Track> {
   return apiRequest(`/library/tracks/${trackId}`);
 }
 
-export async function getAlbums(params?: {
+export async function getAlbums(parameters?: {
   search?: string;
   artist?: string;
   limit?: number;
   offset?: number;
 }): Promise<PaginatedResponse<Album>> {
   const searchParams = new URLSearchParams();
-  if (params?.search) searchParams.set("search", params.search);
-  if (params?.artist) searchParams.set("artist", params.artist);
-  if (params?.limit) searchParams.set("limit", params.limit.toString());
-  if (params?.offset) searchParams.set("offset", params.offset.toString());
+  if (parameters?.search) searchParams.set("search", parameters.search);
+  if (parameters?.artist) searchParams.set("artist", parameters.artist);
+  if (parameters?.limit) searchParams.set("limit", parameters.limit.toString());
+  if (parameters?.offset) searchParams.set("offset", parameters.offset.toString());
 
   const query = searchParams.toString();
   return apiRequest(`/library/albums${query ? `?${query}` : ""}`);
@@ -83,15 +83,15 @@ export async function getAlbumTracks(
   );
 }
 
-export async function getArtists(params?: {
+export async function getArtists(parameters?: {
   search?: string;
   limit?: number;
   offset?: number;
 }): Promise<PaginatedResponse<Artist>> {
   const searchParams = new URLSearchParams();
-  if (params?.search) searchParams.set("search", params.search);
-  if (params?.limit) searchParams.set("limit", params.limit.toString());
-  if (params?.offset) searchParams.set("offset", params.offset.toString());
+  if (parameters?.search) searchParams.set("search", parameters.search);
+  if (parameters?.limit) searchParams.set("limit", parameters.limit.toString());
+  if (parameters?.offset) searchParams.set("offset", parameters.offset.toString());
 
   const query = searchParams.toString();
   return apiRequest(`/library/artists${query ? `?${query}` : ""}`);
