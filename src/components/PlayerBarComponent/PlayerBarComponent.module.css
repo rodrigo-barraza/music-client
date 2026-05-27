@@ -1,0 +1,178 @@
+.player-bar-container {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  background: var(--color-player-background);
+  border-block-start: 1px solid var(--color-border-subtle);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  padding-inline: var(--spacing-xl);
+  gap: var(--spacing-xl);
+  min-height: var(--player-bar-height);
+}
+
+/* ── Track Info ────────────────────────────────────────────── */
+
+.track-info-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  min-width: 0;
+}
+
+.album-art-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius-small);
+  background: var(--color-background-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.track-text-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.track-title-label {
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist-label {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Playback Controls ────────────────────────────────────── */
+
+.playback-controls-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.controls-button-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast), scale var(--transition-fast);
+
+  &:hover {
+    color: var(--color-text-primary);
+    scale: 1.1;
+  }
+}
+
+.play-pause-button {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--border-radius-round);
+  background: var(--color-text-primary);
+  color: var(--color-background-primary);
+  transition: scale var(--transition-fast), background var(--transition-fast);
+
+  &:hover {
+    scale: 1.08;
+    background: var(--color-accent-primary);
+  }
+}
+
+.progress-track-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  max-width: 500px;
+}
+
+.time-label {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+  min-width: 36px;
+  text-align: center;
+}
+
+.progress-bar-track {
+  flex: 1;
+  height: 4px;
+  background: var(--color-player-progress-track);
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+  transition: height var(--transition-fast);
+
+  &:hover {
+    height: 6px;
+  }
+}
+
+.progress-bar-fill {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  height: 100%;
+  background: var(--color-player-progress);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+/* ── Volume Controls ──────────────────────────────────────── */
+
+.volume-controls-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+}
+
+.volume-slider-track {
+  width: 100px;
+  height: 4px;
+  background: var(--color-player-progress-track);
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.volume-slider-fill {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  height: 100%;
+  background: var(--color-text-secondary);
+  border-radius: 2px;
+}
+
+/* ── Empty State ──────────────────────────────────────────── */
+
+.player-empty-state {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-body);
+  gap: var(--spacing-sm);
+}

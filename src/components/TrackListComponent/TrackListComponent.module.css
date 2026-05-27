@@ -1,0 +1,134 @@
+.track-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-list-header-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 80px;
+  gap: var(--spacing-lg);
+  padding-inline: var(--spacing-lg);
+  padding-block: var(--spacing-sm);
+  border-block-end: 1px solid var(--color-border-subtle);
+  margin-block-end: var(--spacing-sm);
+}
+
+.header-cell {
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-tertiary);
+}
+
+.header-cell-end {
+  text-align: end;
+}
+
+.track-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 80px;
+  gap: var(--spacing-lg);
+  align-items: center;
+  padding-inline: var(--spacing-lg);
+  padding-block: var(--spacing-sm);
+  border-radius: var(--border-radius-medium);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+
+  &:hover {
+    background: var(--color-background-hover);
+  }
+}
+
+.track-row-active {
+  background: var(--color-background-active);
+}
+
+.track-number-cell {
+  font-size: var(--font-size-body);
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.playing-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  height: 14px;
+}
+
+.playing-bar {
+  width: 3px;
+  background: var(--color-accent-primary);
+  border-radius: 1px;
+  animation: equalizer-bar 0.8s ease-in-out infinite alternate;
+}
+
+.playing-bar:nth-child(1) {
+  height: 40%;
+  animation-delay: 0s;
+}
+
+.playing-bar:nth-child(2) {
+  height: 70%;
+  animation-delay: 0.2s;
+}
+
+.playing-bar:nth-child(3) {
+  height: 50%;
+  animation-delay: 0.4s;
+}
+
+@keyframes equalizer-bar {
+  from {
+    height: 20%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.track-title-cell {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.track-title-text {
+  font-size: var(--font-size-body);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-title-text-playing {
+  color: var(--color-accent-primary);
+}
+
+.track-artist-text {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-album-cell {
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-duration-cell {
+  font-size: var(--font-size-body);
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}

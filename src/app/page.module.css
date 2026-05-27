@@ -1,0 +1,65 @@
+.music-application-layout {
+  display: grid;
+  grid-template-columns: var(--navigation-width) 1fr;
+  grid-template-rows: 1fr var(--player-bar-height);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-content-area {
+  grid-column: 2;
+  grid-row: 1;
+  overflow-y: auto;
+  padding-block: var(--spacing-xl);
+  padding-inline: var(--spacing-2xl);
+}
+
+.content-section {
+  margin-block-end: var(--spacing-3xl);
+  animation: fade-in 0.5s ease both;
+}
+
+.content-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.content-section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.section-heading {
+  font-size: var(--font-size-heading-medium);
+  font-weight: 700;
+  margin-block-end: var(--spacing-lg);
+  color: var(--color-text-primary);
+}
+
+.empty-state-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  padding-block: var(--spacing-3xl);
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-large);
+  text-align: center;
+}
+
+.empty-state-icon {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.loading-skeleton {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.skeleton-card {
+  aspect-ratio: 1;
+  background: var(--color-background-elevated);
+  border-radius: var(--border-radius-medium);
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
