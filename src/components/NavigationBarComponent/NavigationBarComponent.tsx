@@ -17,7 +17,7 @@ export default function NavigationBarComponent() {
       <div className={styles["navigation-section"]}>
         <span className={styles["section-label"]}>Menu</span>
         <button
-          className={`${styles["navigation-link"]} ${styles["navigation-link-active"]}`}
+          className={`${styles["navigation-link"]} ${styles["navigation-link-is-active-state"]}`}
           aria-current="page"
         >
           <Home className={styles["navigation-link-icon"]} />

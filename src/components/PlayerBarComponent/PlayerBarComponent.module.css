@@ -65,7 +65,7 @@
   gap: var(--spacing-sm);
 }
 
-.controls-button-row {
+.controls-button-layout-row {
   display: flex;
   align-items: center;
   gap: var(--spacing-lg);

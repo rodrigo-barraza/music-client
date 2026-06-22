@@ -62,7 +62,7 @@ export default function HomePage() {
         <section className={styles["content-section"]}>
           <h2 className={styles["section-heading"]}>Recently Added</h2>
           {isLoading ? (
-            <div className={styles["loading-skeleton"]}>
+            <div className={styles["is-loading-skeleton-state"]}>
               {Array.from({ length: 6 }).map((_, index) => (
                 <div key={index} className={styles["skeleton-card"]} />
               ))}

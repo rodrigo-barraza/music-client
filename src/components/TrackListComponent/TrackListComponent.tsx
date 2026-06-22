@@ -24,7 +24,7 @@ export default function TrackListComponent({
 }: TrackListComponentProps) {
   return (
     <div className={styles["track-list-container"]} role="list">
-      <div className={styles["track-list-header-row"]}>
+      <div className={styles["track-list-header-layout-row"]}>
         <span className={styles["header-cell"]}>#</span>
         <span className={styles["header-cell"]}>Title</span>
         <span className={styles["header-cell"]}>Album</span>
@@ -42,7 +42,7 @@ export default function TrackListComponent({
         return (
           <div
             key={track._id}
-            className={`${styles["track-row"]} ${isCurrentTrack ? styles["track-row-active"] : ""}`}
+            className={`${styles["track-layout-row"]} ${isCurrentTrack ? styles["track-layout-row-is-active-state"] : ""}`}
             role="listitem"
             onClick={() => onTrackSelect(track)}
           >

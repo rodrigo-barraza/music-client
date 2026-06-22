@@ -61,7 +61,7 @@ export default function PlayerBarComponent({
 
       {/* ── Playback Controls ──────────────────────────── */}
       <div className={styles["playback-controls-section"]}>
-        <div className={styles["controls-button-row"]}>
+        <div className={styles["controls-button-layout-row"]}>
           <button
             className={styles["control-button"]}
             aria-label="Toggle shuffle"
