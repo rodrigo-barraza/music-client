@@ -39,7 +39,7 @@
     "jsdom": "^29.1.1",
     "prettier": "^3.8.3",
     "ts-morph": "^28.0.0",
-    "typescript": "next",
+    "typescript": "^5.9.3",
     "vitest": "^4.1.5",
     "vite": "^8.0.11",
     "@types/testing-library__jest-dom": "^5.14.9",
