@@ -5,6 +5,7 @@ import {
   generateThemeInitScript,
 } from "@rodrigo-barraza/components-library";
 import AuthProvider from "@/providers/AuthProvider";
+import SessionTrackerComponent from "@/components/SessionTrackerComponent";
 
 const AUTH_ENABLED = process.env.AUTH_ENABLED === "true";
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider storageKey="music:theme">
           <ComponentsProvider>
             <AuthProvider authEnabled={AUTH_ENABLED}>
+              <SessionTrackerComponent />
               {children}
             </AuthProvider>
           </ComponentsProvider>
