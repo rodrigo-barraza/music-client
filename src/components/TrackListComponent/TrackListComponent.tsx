@@ -1,6 +1,7 @@
 "use client";
 
 import type { Track } from "@/types";
+import { formatDuration } from "@/utils/format";
 import styles from "./TrackListComponent.module.css";
 
 interface TrackListComponentProps {
@@ -8,12 +9,6 @@ interface TrackListComponentProps {
   onTrackSelect: (track: Track) => void;
   currentTrackId?: string;
   isPlaying?: boolean;
-}
-
-function formatDuration(totalSeconds: number): string {
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
-  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
 export default function TrackListComponent({

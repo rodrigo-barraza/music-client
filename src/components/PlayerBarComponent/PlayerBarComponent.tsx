@@ -11,17 +11,12 @@ import {
   Repeat,
 } from "lucide-react";
 import styles from "./PlayerBarComponent.module.css";
+import { formatDuration } from "@/utils/format";
 
 interface PlayerBarComponentProps {
   currentTrack: Track | null;
   isPlaying: boolean;
   onTogglePlayback: () => void;
-}
-
-function formatDuration(totalSeconds: number): string {
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
-  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
 export default function PlayerBarComponent({
