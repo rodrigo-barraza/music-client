@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider storageKey="music:theme">
           <ComponentsProvider>
             <AuthProvider authEnabled={AUTH_ENABLED}>
-              <SessionTrackerComponent />
+              <SessionTrackerComponent authEnabled={AUTH_ENABLED} />
               {children}
             </AuthProvider>
           </ComponentsProvider>
