@@ -26,11 +26,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <template
+        {/* A plain <script> runs before first paint; one inside a <template>
+            is inert and never runs, so non-default themes flashed. */}
+        <script
           dangerouslySetInnerHTML={{
-            __html: `<script>${generateThemeInitScript("music:theme")}</script>`,
+            __html: `${generateThemeInitScript("music:theme")}`,
           }}
-          suppressHydrationWarning
         />
       </head>
       <body>
